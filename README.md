@@ -22,6 +22,9 @@
 
 数据通路基本描述完成。控制通路直接通过数据的有效来完成实现。
 
+采用新的内部结构设计，引入了 SpinalHDL Stream 库的操作，优先对两路 Stream 数据合并，然后再通过 bypass 和 barrier shift 操作完成映射，对比旧设计改变较大。
+![NewArchitecture](./.assert/newArchitecture.png)
+
 ### 仿真结果
 ![](./.assert/result.png)![](./.assert/result2.png)
 由仿真结果可以看到基本完成题目实现效果要求，其中上图后半部分结果输出为下级反压模拟。仿真为了方便，直接在 SpinalHDL 上完成了 Testbench 的编写，符合随机验证要求。
