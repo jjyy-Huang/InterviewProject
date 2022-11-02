@@ -29,5 +29,17 @@
 ![](./.assert/result.png)![](./.assert/result2.png)
 由仿真结果可以看到基本完成题目实现效果要求，其中上图后半部分结果输出为下级反压模拟。仿真为了方便，直接在 SpinalHDL 上完成了 Testbench 的编写，符合随机验证要求。
 
+### 综合结果性能
+旧版架构综合
+![OldPerformance](./.assert/oldperformance100M.png)
+![OldPerformance](./.assert/oldperformance250M.png)
+
+新版架构综合
+![NewPerformance100M](./.assert/newperformance100M.png)
+![NewPerformance250M](./.assert/newperfomance250M.png)
+
+使用移位寄存器代替了 MUX 和计数器，FF 用量大了，频率也上去了
+
 ### 其他说明
 在代码上，虽然使用了 SpinalHDL 进行开发，但基于其进行开发的经验相较少，所以在使用上还比较像传统的 Verilog 设计电路。
+
